@@ -1,0 +1,135 @@
+2<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day </title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <!-- Password Screen (Love-lock PIN) -->
+    <div class="password-screen" id="passwordScreen">
+        <div class="password-container">
+            <h1>🔐 Love Lock</h1>
+            <p>Enter the 4-digit love lock</p>
+            <div class="pin-inputs">
+                <input type="text" id="pin1" class="pin-input" inputmode="numeric" maxlength="1" />
+                <input type="text" id="pin2" class="pin-input" inputmode="numeric" maxlength="1" />
+                <input type="text" id="pin3" class="pin-input" inputmode="numeric" maxlength="1" />
+                <input type="text" id="pin4" class="pin-input" inputmode="numeric" maxlength="1" />
+            </div>
+            <button id="unlockBtn" class="unlock-btn">Unlock</button>
+            <p class="password-hint">Hint: the day we got together (MMDD)</p>
+        </div>
+    </div>
+
+    <!-- Main Content (Hidden until password is correct) -->
+    <div class="main-content" id="mainContent" style="display: none;">
+    <div class="container">
+        <div class="content">
+            <h1>Happy Valentine's Day</h1>
+            <p class="subtitle">Click the card to open your special message</p>
+            <!-- Debug: quick start game button to help testing (remove if desired) -->
+            <button class="card-button" id="debugStartBtn" style="background:linear-gradient(90deg,#6ee7b7,#3b82f6);margin-left:12px;">▶ Start Game (debug)</button>
+        </div>
+    </div>
+
+
+    
+        <!-- Game Page (shown first after unlock) -->
+        <div class="page" id="gamePage" style="display:none;">
+            <div class="container">
+                <div class="game-container">
+                    <div class="game-top">
+                        <h2>Mini Game: Match the Hearts</h2>
+                        <p class="subtitle">Match all pairs of hearts to continue</p>
+                <p id="gameStatus">Found 0 / 3</p>
+                        <div class="game-grid" id="gameGrid" aria-hidden="false"></div>
+                    </div>
+                    <div class="game-buttons">
+                        <button id="skipGameBtn" class="card-button">Skip Game</button>
+                        <button id="nextToReasonsBtn" class="card-button" style="display:none;">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timer Page (after game) -->
+        <div class="page" id="timerPage" style="display:none;">
+            <div class="container">
+                <div class="timer-container">
+                    <div class="search-bar">
+                        <span class="search-text">how long have we've been together?</span>
+                        <span class="search-icon">🔍︎</span>
+                    </div>
+                    <div class="timer-display">
+                        <div class="time-unit">
+                            <span id="days">0</span>
+                            <span class="time-label">Days</span>
+                        </div>
+                        <span class="colon">:</span>
+                        <div class="time-unit">
+                            <span id="hours">0</span>
+                            <span class="time-label">Hours</span>
+                        </div>
+                        <span class="colon">:</span>
+                        <div class="time-unit">
+                            <span id="minutes">0</span>
+                            <span class="time-label">Minutes</span>
+                        </div>
+                        <span class="colon">:</span>
+                        <div class="time-unit">
+                            <span id="seconds">0</span>
+                            <span class="time-label">Seconds</span>
+                        </div>
+                    </div>
+                    <button id="readLetterBtn2" class="card-button">Continue</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reasons Page (after timer) -->
+        <div class="page" id="reasonsPage" style="display:none;">
+            <div class="container">
+                <div class="reasons-box">
+                    <h2>Reasons I Love You</h2>
+                    <div class="reason-item" data-reason="With you, feels like HOME.">
+                        <div class="reason-text hidden"></div>
+                    </div>
+                    <div class="reason-item" data-reason="Our phone calls.">
+                        <div class="reason-text hidden"></div>
+                    </div>
+                    <div class="reason-item" data-reason="You have a good heart.">
+                        <div class="reason-text hidden"></div>
+                    </div>
+                    <div class="reason-item" data-reason="When you tell me you love/miss me.">
+                        <div class="reason-text hidden"></div>
+                    </div>
+                    <div class="reason-item" data-reason="I'm so blessed to have you in my life.">
+                        <div class="reason-text hidden"></div>
+                    </div>
+                    <button id="nextToTimerBtn" class="card-button">Continue</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Letter Page (after reasons) -->
+        <div class="page" id="letterPage" style="display:none;">
+            <div class="container">
+                <div class="letter-box">
+                    <h2>Happy Valentines Day Min!</h2>
+                    <div class="letter-content">
+                        <p id="typed-text"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+    </html>
+
+
+
